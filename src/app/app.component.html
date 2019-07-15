@@ -1,0 +1,36 @@
+<div>
+
+  <form align="center" style="border: 2px" [formGroup]="myForm" novalidate>
+    <table align="center">
+      <!-- <tr>
+        <td>start date</td>
+      </tr> -->
+      <tr>
+        Start Date:<td style="width: 200px">
+          <my-date-picker name="sdate" [options]="myDatePickerOptions" formControlName="sdate"
+          [(ngModel)]="dateValue1"></my-date-picker>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td>end date</td>
+      </tr> -->
+      <tr>
+        End Date: <td>
+          <my-date-picker name="edate" [options]="myDatePickerOptions" formControlName="edate"
+          [(ngModel)]="dateValue2"></my-date-picker>
+        </td>
+      </tr>
+
+    </table>
+    <button class="bt" (click)="submit(myForm.value)" type="submit">click</button><br><br>
+    <my-date-range-picker  name="mydaterange" [options]="myDateRangePickerOptions" formControlName="myDateRange" [(ngModel)]="dateRangeValue">
+    </my-date-range-picker>
+  </form>
+</div>
+<br>
+<br>
+
+
+
+
+<router-outlet></router-outlet>
